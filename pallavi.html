@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallavi Thakur - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 50%;
+            left: 2rem;
+            transform: translateY(-50%);
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        .hero-subtitle {
+            color: #4b5563;
+        }
+        .section {
+            padding: 4rem 0;
+        }
+        .portfolio-item img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        .education-image {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .skill-card {
+            background-color: #112240; /* Card background */
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px); /* Hover effect */
+        }
+        .company-list {
+            border-left: 2px solid #64ffda; /* Highlighted left border for active company */
+        }
+        .company-item {
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .company-item:hover, .company-item.active {
+            background-color: #112240; /* Background change on hover and active */
+        }
+        .job-details {
+            padding: 1.5rem;
+        }
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #64ffda; /* Highlight color for job titles */
+        }
+        .job-duration {
+            font-size: 0.875rem;
+            color: #8892b0; /* Subtle color for job duration */
+        }
+        .job-description {
+            margin-top: 1rem;
+            color: #8892b0;
+        }
+        .job-description li {
+            display: flex;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+        .job-description li::before {
+            content: '▹'; /* Arrow bullet point */
+            margin-right: 0.5rem;
+            color: #64ffda;
+        }
+
+        .project-card {
+            background-color: #112240; /* Card background */
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-5px); /* Hover effect */
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #64ffda; /* Highlight color for project titles */
+        }
+        .project-description {
+            color: #8892b0; /* Subtle color for project descriptions */
+        }
+        .tech-badge {
+            background-color: #0b3d4e; /* Badge background */
+            color: #64ffda;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-400">
+
+    <!-- Sidebar with Social Media Links -->
+    <div class="sidebar hidden md:block">
+        <a href="https://www.linkedin.com/in/pallavi-thakur-41b89496/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="w-8 h-8">
+        </a>
+        <a href="https://github.com/pallavi2010/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" class="w-8 h-8">
+        </a>
+        <a href="mailto:pallavit.2010@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-8 h-8">
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 shadow-md fixed w-full z-10 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-400">Pallavi Thakur</a>
+            <div class="space-x-6">
+                <a href="#about" class="hover:text-blue-500">About</a>
+                <a href="#skills" class="hover:text-blue-500">Skills</a>
+                <a href="#experience" class="hover:text-blue-500">Experience</a>
+                <a href="#projects" class="hover:text-blue-500">Projects</a>
+                <a href="#resume" class="hover:text-blue-500">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class=" bg-gray-900 flex flex-col items-start justify-center min-h-screen pt-20 px-8 md:px-20">
+        <div class="max-w-4xl mx-auto text-left">
+            <p class="text-lg text-green-400 mb-4">Hi, my name is</p>
+            <h1 class="hero-title text-white mb-4">Pallavi Thakur.</h1>
+            <h2 class="hero-title text-gray-400 mb-6">I build things for the web.</h2>
+            <p class="sub-title max-w-xl mb-8 text-gray-400">
+                If you have a project that you need to take to the next level or develop a new one from scratch using cutting-edge technologies but still well-structured architecture, you are in the right place. <span class="highlight">PHP and Laravel</span> are my passions, and I love to develop well-structured, extensible, and performant web applications.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#projects" class="px-6 py-3 border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-gray-900 transition">View my work</a>
+                <a href="#contact" class="px-6 py-3 border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-gray-900 transition">Hire me</a>
+            </div>
+        </div>
+
+        <!-- Technology Icons -->
+        <div class="flex space-x-6 mt-10">
+
+            <img src="https://img.icons8.com/?size=100&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel Logo" class="w-16 h-16">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919830.png" alt="PHP Logo" class="w-16 h-16">
+            <img src="https://img.icons8.com/?size=100&id=uSHYbs6PJfMT&format=png&color=000000" alt="Shopify Logo" class="w-16 h-16">
+        </div>
+    </section>
+
+ <!-- About Me Section -->
+ <section id="about" class="section bg-gray-900 text-gray-400">
+    <div class="container mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/3">
+            
+
+            <img src="https://drive.google.com/thumbnail?sz=w1000&id=1iZUqst0xH5MUcEwofni-8_25QcIV1Yur" alt="Pallavi Thakur" class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+        <div class="md:w-2/3">
+            <h2 class="text-2xl text-blue-400 mb-4">01. About Me</h2>
+            <p class="mb-4">
+                👋 Hello! My name is Pallavi. I am an accomplished software developer with <span class="highlight">8+ years of professional experience</span> in software development. My expertise lies in crafting visually appealing and user-friendly interfaces, utilizing the latest technologies and best practices to deliver exceptional web experiences.
+            </p>
+            <p class="mb-4">
+                Fast-forward to today, I’ve crafted software for <span class="highlight">a variety of clients, including startups and established businesses</span>, and I'm presently freelancing. 
+            </p>
+            <p class="mb-4">
+                When I am not immersed in coding or experimenting with the latest frameworks, I find solace and exhilaration in exploring the great outdoors, particularly during mountain expeditions.
+            </p>
+            <p>
+                With my unique blend of technical proficiency, a passion for technology, and a love for adventure, I approach both my professional and personal pursuits with dedication and enthusiasm, always eager to embrace new challenges and reach new heights.
+            </p>
+        </div>
+    </div>
+</section>
+
+   <!-- Skills & Tools Section -->
+   <section id="skills" class=" bg-gray-900 section py-20">
+    <div class="container mx-auto">
+        <h2 class="text-2xl text-green-400 mb-8">02. Skills & Tools</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Skill Cards -->
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://img.icons8.com/?size=100&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">Laravel</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/919/919830.png" alt="PHP" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">PHP</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png" alt="JQuery" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">JQuery</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/2750/2750714.png" alt="AJAX" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">AJAX</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">JavaScript</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="HTML" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">HTML</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="CSS" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">CSS</span>
+            </div>
+            <div class="skill-card flex flex-col items-center">
+                <img src="https://img.icons8.com/?size=100&id=uSHYbs6PJfMT&format=png&color=000000" alt="Shopify" class="w-12 h-12 mb-4">
+                <span class="text-lg font-semibold text-gray-400">Shopify</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Where I've Worked Section -->
+  <section id="experience" class=" bg-gray-900 section py-20">
+    <div class="container mx-auto">
+        <h2 class="text-2xl text-green-400 mb-8">03. Where I've Worked</h2>
+        <div class="flex flex-col md:flex-row">
+            <!-- Company List -->
+            <div class="company-list md:w-1/4">
+                <div class="company-item active" onclick="showJobDetails('zithera')">Zithera</div>
+                <div class="company-item" onclick="showJobDetails('togoparts')">Togoparts</div>
+                <div class="company-item" onclick="showJobDetails('zasya')">Zasya Solutions</div>
+                <div class="company-item" onclick="showJobDetails('netgen')">Netgen IT Solutions</div>
+            </div>
+            <!-- Job Details -->
+            <div class="job-details md:w-3/4">
+                <!-- Zithera Details -->
+                <div id="zithera" class="job-content">
+                    <h3 class="job-title">Software Developer (Zithera)</h3>
+                    <p class="job-duration">April 2022 - Present</p>
+                    <ul class="job-description">
+                        <li>Developed and maintained Laravel-based websites and applications for creating and managing white-label tenants.</li>
+                        <li>Worked on APIs and webhooks integration, focusing on backend functionality using PHP and Laravel.</li>
+                        <li>Collaborated with UI/UX designers to implement responsive and visually appealing user interfaces.</li>
+                    </ul>
+                </div>
+                <!-- Togoparts Details -->
+                <div id="togoparts" class="job-content hidden">
+                    <h3 class="job-title">Software Developer (Togoparts)</h3>
+                    <p class="job-duration">April 2022 - November 2023</p>
+                    <ul class="job-description">
+                        <li>Contributed to a core PHP-based website for managing cycling and running events across various countries.</li>
+                        <li>Developed new products using Laravel, including features for event creation, registration, and management.</li>
+                        <li>Implemented features for user registration, product listings, search functionality, checkout process, and payment integration.</li>
+                    </ul>
+                </div>
+                <!-- Zasya Solutions Details -->
+                <div id="zasya" class="job-content hidden">
+                    <h3 class="job-title">Software Developer (Zasya Solutions)</h3>
+                    <p class="job-duration">August 2017 - March 2022</p>
+                    <ul class="job-description">
+                        <li>Handled Laravel and Shopify projects, including e-commerce and e-learning platforms with integrated payment gateways.</li>
+                        <li>Worked on major projects involving PHP, JavaScript, jQuery, and MySQL.</li>
+                        <li>Maintained and enhanced the functionality of the e-commerce platform built on Laravel and Shopify.</li>
+                    </ul>
+                </div>
+                 <!-- Netgen IT Solutions Details -->
+                 <div id="netgen" class="job-content hidden">
+                    <h3 class="job-title">Software Developer (Netgen IT Solutions)</h3>
+                    <p class="job-duration">March 2016 - July 2017</p>
+                    <ul class="job-description">
+                        <li>Worked on major projects in CakePHP 2, CakePHP 3, and Laravel frameworks.</li>
+                        <li>Developed an ecommerce website using CakePHP 3 with payment gateway integration (Authorize.net) and integration of Mailchimp.</li>
+                        <li>Worked on projects related to online property selling, buying, renting, and e-learning platforms.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Things That I've Built Section -->
+  <section id="projects" class="section py-20 bg-gray-900">
+    <div class="container mx-auto">
+        <h2 class="text-2xl text-green-400 mb-8">04. Things That I've Built</h2>
+        <div class="space-y-8">
+            <!-- Points4Purpose Project -->
+            <div class="project-card flex flex-col md:flex-row">
+                <img src="https://drive.google.com/thumbnail?sz=w1000&id=1tntwqWXNuulZ7uZYveB3exSIYE6HXpcI" alt="Points4Purpose" class="md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="md:w-2/3">
+                    <h3 class="project-title">Points4Purpose Loyalty Platform</h3>
+                    <p class="project-description mb-4">Zithera</p>
+                    <p class="project-description mb-4">
+                        A multi-tenant loyalty platform designed to empower customers and employees to engage in shopping, saving, earning, converting, and contributing to preferred causes. Integrated with various cashback platforms like Fidel, PokitPal, and Loyalize, enabling members to receive cashbacks and reward points. Users can withdraw or donate cashbacks to charitable causes.
+                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EducateSimplify Project -->
+            <div class="project-card flex flex-col md:flex-row">
+                <img src="https://drive.google.com/thumbnail?sz=w1000&id=1tFGt3hMxqfdQqs7V0hzlzeNLJ9EMZ7Ln" alt="EducateSimplify" class="md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="md:w-2/3">
+                    <h3 class="project-title">EducateSimplify E-Learning Platform</h3>
+                    <p class="project-description mb-4">Zithera</p>
+                    <p class="project-description mb-4">
+                        An e-learning hub that allows individuals to register as instructors and create courses. Students can enroll in these courses and receive completion certificates upon finishing. The platform continuously evolves with new features and improvements based on user feedback and market trends.
+                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Togoparts Project -->
+            <div class="project-card flex flex-col md:flex-row">
+                <img src="https://drive.google.com/thumbnail?sz=w1000&id=1eHTXAwxoOBeyEYzIQXqQikLqNj5s2Ksa" alt="Togoparts" class="md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="md:w-2/3">
+                    <h3 class="project-title">Togoparts Marketplace and Event Platform</h3>
+                    <p class="project-description mb-4">Togoparts</p>
+                    <p class="project-description mb-4">
+                        A marketplace for bicycles and parts, coupled with a platform for organizing virtual cycling and running events. Developed a robust event management system and customizable events framework tailored to external organizations and charity platforms.
+                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-badge">Core PHP</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Car Wash Project -->
+            <div class="project-card flex flex-col md:flex-row">
+                <img src="https://drive.google.com/thumbnail?sz=w1000&id=1N3uIC8F4hvkfK0UqyUgAXNmAibJPfQ-W" alt="Mobile Car Wash" class="md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="md:w-2/3">
+                    <h3 class="project-title">Mobile Car Wash Service Platform</h3>
+                    <p class="project-description mb-4">Zasya Solutions</p>
+                    <p class="project-description mb-4">
+                        Developed a website and mobile application simplifying the process of scheduling car wash services. Designed RESTful APIs, database schemas, and integrated payment gateways for seamless user experience and backend functionality.
+                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Beard Club Project -->
+            <div class="project-card flex flex-col md:flex-row">
+                <img src="https://drive.google.com/thumbnail?sz=w1000&id=1_Z3BTlb4QyKTAbcJ3yjLqStlqodXGMSk" alt="The Beard Club" class="md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="md:w-2/3">
+                    <h3 class="project-title">The Beard Club E-Commerce Platform</h3>
+                    <p class="project-description mb-4">Zasya Solutions</p>
+                    <p class="project-description mb-4">
+                        An e-commerce platform for beard growth supplements and grooming products. Initially built on Laravel and later migrated to Shopify, maintaining the backend integrations for seamless operations. Developed Shopify apps and APIs to enhance the platform’s functionality and customer experience.
+                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">Shopify</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Online Parking PAss Project -->
+            <div class="project-card flex flex-col md:flex-row">
+                <img src="https://drive.google.com/thumbnail?sz=w1000&id=14n89PQ3pPS0OgZfh5NylUh0Rlrh9cCFW" alt="The Beard Club" class="md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="md:w-2/3">
+                    <h3 class="project-title">Online Parking Pass</h3>
+                    <p class="project-description mb-4">Netgen IT Solutions</p>
+                    <p class="project-description mb-4">
+                        OnlineParkingPass.com is a web-based platform designed to simplify the management of parking permits for various organizations, including schools, universities, residential complexes, and commercial entities. The platform offers a seamless and automated way for users to apply for, renew, and manage parking passes.                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-badge">Cakephp</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
+
+
+ <!-- Download Resume Section -->
+ <section id="contact" class=" bg-gray-900 section py-20">
+    <div class="container mx-auto text-center">
+        <h2 class="text-2xl text-gray-100 mb-6">In need of a software developer?</h2>
+        <p class="text-gray-400 mb-6">
+            If you have a project that you need to take to the next level or develop a new one from scratch using cutting-edge technologies but still well-structured architecture, you are in the right place. I specialize in PHP, Laravel, and modern web technologies, and I'm eager to develop well-structured, extensible, and performant applications.
+        </p>
+        <p class="flex items-center justify-center mb-6">
+            <span class="text-green-400 text-lg mr-2">●</span> I'm currently available for work.
+        </p>
+        <div class="contact-info mb-8">
+            <a href="mailto:pallavit.2010@gmail.com" class="flex items-center justify-center mb-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-6 h-6 mr-2"> pallavit.2010@gmail.com
+            </a>
+            <a href="https://wa.me/9418651383" target="_blank" class="flex items-center justify-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp" class="w-6 h-6 mr-2"> +91-9418651383
+            </a>
+        </div>
+           <!-- Download Resume Section -->
+    <section id="resume" class="py-10 text-center">
+        <h2 class="section-title mb-4">Download My Resume</h2>
+        <a href="https://drive.google.com/uc?export=download&id=13yUMDzQY-UUChWGfkg6eJ07y0Y6Y4EUD" download><button  class="bg-green-500 text-white px-8 py-3 rounded hover:bg-green-600">Download Resume (PDF)</button></a>
+    </section>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-400 py-4 text-center">
+    <p>Designed & Built by Pallavi Thakur.</p>
+</footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-2 text-center">
+        <p>&copy; 2024 Pallavi Thakur. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function downloadResume() {
+            const link = document.createElement('a');
+            link.href = 'path/to/your/resume.pdf'; // Update with the actual path to your PDF
+            link.download = 'Pallavi_Thakur_Resume.pdf';
+            link.click();
+        }
+    </script>
+    <script>
+        function showJobDetails(company) {
+            // Hide all job details
+            document.querySelectorAll('.job-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Remove 'active' class from all company items
+            document.querySelectorAll('.company-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show the selected job details
+            document.getElementById(company).classList.remove('hidden');
+
+            // Add 'active' class to the selected company item
+            document.querySelector(`.company-item[onclick="showJobDetails('${company}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
